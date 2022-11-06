@@ -40,12 +40,17 @@ INSTALLED_APPS = [
 
     # Installed package
     'crispy_forms',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
 
     # MY APPS
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
