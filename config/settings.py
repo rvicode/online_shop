@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
 
 
     # MY APPS
@@ -149,5 +148,12 @@ LOGOUT_REDIRECT_URL = 'home'
 # Email Backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# all auth settings
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
 # Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

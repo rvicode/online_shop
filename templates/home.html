@@ -10,7 +10,7 @@
     {% if request.user.is_authenticated %}
         <h2>hello {{ request.user.username }} | <span><a href="{% url 'account_logout' %}">logout</a></span></h2>
     {% else %}
-        <span><a href="{% url 'sign_up' %}">Sign Up</a></span> |
+        <span><a href="{% url 'account_signup' %}">Sign Up</a></span> |
         <span><a href="{% url 'account_login' %}">Sign In</a></span>
     {% endif %}
 {% endblock %}
