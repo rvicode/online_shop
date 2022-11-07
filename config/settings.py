@@ -80,6 +80,11 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
@@ -141,6 +146,8 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+# Email Backend
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
