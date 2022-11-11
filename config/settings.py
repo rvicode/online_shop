@@ -17,7 +17,7 @@ import os
 env = environ.Env(
     # set casting, default value
     SECRET_KEY=(str, 'django-insecure-b764$#(&o4o((cvy!z^nsseq5@erq#e^0%5r5a(%c24*f^*sde'),
-    DEBUG=(bool, False),
+    DEBUG=(bool, True),
 )
 
 
@@ -164,5 +164,6 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
 # Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
