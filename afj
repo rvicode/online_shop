@@ -1,0 +1,95 @@
+[33mcommit 8637abb83205b565b97f83dd20012f8cfaca6b16[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Sat Nov 12 13:52:36 2022 +0330
+
+    add model in products
+
+[33mcommit f78f289ca854cf93c99cf990db7d7d914617a28d[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Sat Nov 12 13:43:55 2022 +0330
+
+    add product app
+
+[33mcommit 1a2868e5fa7eb03324375db442f9b386375d0894[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Fri Nov 11 13:00:50 2022 +0330
+
+    add password_reset_form_key and password_reset_form_key_done page and edit html files
+
+[33mcommit 500c8a5d85e74e44e903c896f59405fc2de34567[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Fri Nov 11 12:41:58 2022 +0330
+
+    add password_reset_done
+
+[33mcommit e810583a26cec5890bad98fb6493774ab5f50e4c[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Fri Nov 11 12:37:42 2022 +0330
+
+    add csrf_token in form password_reset
+
+[33mcommit 1fe03a3d9e27f1ecc6a13767d635dee2921297ab[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Fri Nov 11 12:35:34 2022 +0330
+
+    add password_reset
+
+[33mcommit 4d47f5f1159b1d251535404a26fcf8c0a2e7ae71[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Fri Nov 11 12:22:09 2022 +0330
+
+    add email_confirm
+
+[33mcommit 13c83038d3a2c92d7e0b1689d6b0a06b257f0d81[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Mon Nov 7 20:13:10 2022 +0330
+
+    install django-environ
+
+[33mcommit 6233456284553fa629906abd49206439613ecedc[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Mon Nov 7 19:36:44 2022 +0330
+
+    add all auth setting
+
+[33mcommit d9d5807914e17b32a523a2903174abab61363a36[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Mon Nov 7 19:11:23 2022 +0330
+
+    add email backend and AUTHENTICATION_BACKENDS
+
+[33mcommit e7131daf977a6a4e284b91f8865223441d737b6a[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Sun Nov 6 19:28:45 2022 +0330
+
+    add signin and signup in allauth
+
+[33mcommit b900b691c24b49f3d2feedcd63471d2585f43263[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Sun Nov 6 16:15:45 2022 +0330
+
+    install django-all-auth
+
+[33mcommit d028b4c50b5d6086976f7ec42cb739a65daa6e77[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Sat Nov 5 22:02:42 2022 +0330
+
+    add crispy forms
+
+[33mcommit 71df443b4bb17024e47f07294237290423715c80[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Fri Nov 4 11:49:26 2022 +0330
+
+    add login and signup
+
+[33mcommit 2bf5bac45f585ecc83e0e4fc1d62fb1db8982e55[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Fri Nov 4 11:15:33 2022 +0330
+
+    add pages
+
+[33mcommit 3d97a762bc90ca0697492e14c24c5781e0ce3808[m
+Author: Arvin Visi <arvinvisi03@gmail.com>
+Date:   Fri Nov 4 10:15:32 2022 +0330
+
+    first commit
