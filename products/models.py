@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
-from accounts.models import CustomUser
+from django.contrib.auth import get_user_model
 
 
 class Product(models.Model):
@@ -21,7 +21,7 @@ class Product(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, max_length=50)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, max_length=50, related_name="comments")
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="comments")
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='reply', null=True, blank=True)
     description = models.TextField()
@@ -31,3 +31,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'{self.user}'
+
+    def get_absolute_url(self):
+        return reverse('product_detail', args=[self.product_id])
