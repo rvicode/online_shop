@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 
+from django.contrib.auth import get_user_model
+
 
 class Product(models.Model):
     title = models.CharField(max_length=100)
@@ -19,11 +21,13 @@ class Product(models.Model):
 
 
 class Comment(models.Model):
-    user = models.CharField(max_length=50)
-    title = models.CharField(max_length=50)
+    user = models.ForeignKey(get_user_model, on_delete=models.CASCADE, max_length=50)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="comments")
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='reply', null=True, blank=True)
     description = models.TextField()
     active = models.BooleanField(default=True)
 
+    datetime_create = models.DateField(auto_now_add=True)
+
     def __str__(self):
-        return self.user, self.title
-    
+        return self.user, self.product
