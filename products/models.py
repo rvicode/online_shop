@@ -16,3 +16,14 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('product_detail', args=[self.id])
+
+
+class Comment(models.Model):
+    user = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.user, self.title
+    
