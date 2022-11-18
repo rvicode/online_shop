@@ -30,4 +30,4 @@ class Comment(models.Model):
     datetime_create = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'User: {self.user}'
+        return f'{self.user}'

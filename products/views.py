@@ -1,6 +1,7 @@
+from django.shortcuts import render
 from django.views import generic
 
-from .models import Product
+from .models import Product, Comment
 
 
 class ProductListView(generic.ListView):
