@@ -20,6 +20,11 @@ class Product(models.Model):
         return reverse('product_detail', args=[self.id])
 
 
+class ActiveCommentsManager(models.Manager):
+    def get_queryset(self):
+        return super(ActiveCommentsManager, self).get_queryset().filter(active=True)
+
+
 class Comment(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, max_length=50, related_name="comments")
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="comments")
@@ -28,6 +33,10 @@ class Comment(models.Model):
     active = models.BooleanField(default=True)
 
     datetime_create = models.DateTimeField(auto_now_add=True)
+
+    # Manager
+    objects = models.Manager()
+    active_comment_manager = ActiveCommentsManager()
 
     def __str__(self):
         return f'{self.user}'
