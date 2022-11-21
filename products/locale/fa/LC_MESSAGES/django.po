@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-21 13:17+0330\n"
+"POT-Creation-Date: 2022-11-21 13:25+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\models.py:9
+msgid "Name Product"
+msgstr "اسم محصول"
+
+#: .\models.py:10
+msgid "Description"
+msgstr "توضیحات محصول"
+
+#: .\models.py:11
+msgid "Product Price"
+msgstr "قیمت محصول"
+
+#: .\models.py:12 .\models.py:36
+msgid "Its Active"
+msgstr "فعال است"
+
+#: .\models.py:14
+msgid "Time Created"
+msgstr "زمان ساخت"
+
+#: .\models.py:15
+msgid "Time Updated"
+msgstr "زمان بروزرسانی"
 
 #: .\models.py:31
 msgid "Author"
@@ -32,10 +56,6 @@ msgstr "متن نظر"
 #: .\models.py:35
 msgid "Reply comment"
 msgstr "جواب نظر"
-
-#: .\models.py:36
-msgid "Its Active"
-msgstr "فعال است"
 
 #: .\models.py:38
 msgid "Time created"

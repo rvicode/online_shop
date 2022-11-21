@@ -6,13 +6,13 @@ from django.contrib.auth import get_user_model
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-    price = models.PositiveIntegerField()
-    active = models.BooleanField(default=False)
+    title = models.CharField(max_length=100, verbose_name=_('Name Product'))
+    description = models.TextField(verbose_name=_('Description'))
+    price = models.PositiveIntegerField(verbose_name=_('Product Price'))
+    active = models.BooleanField(default=False, verbose_name=_('Its Active'))
 
-    datetime_create = models.DateTimeField(auto_now_add=True)
-    datetime_modified = models.DateTimeField(auto_now=True)
+    datetime_create = models.DateTimeField(auto_now_add=True, verbose_name=_('Time Created'))
+    datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Time Updated'))
 
     def __str__(self):
         return self.title
