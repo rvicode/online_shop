@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 from django.contrib.auth import get_user_model
 
@@ -26,13 +27,15 @@ class ActiveCommentsManager(models.Manager):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, max_length=50, related_name="comments")
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="comments")
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='reply', null=True, blank=True)
-    description = models.TextField()
-    active = models.BooleanField(default=True)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, max_length=50, related_name="comments",
+                             verbose_name=_('Author'))
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="comments", verbose_name=_('Product'))
+    description = models.TextField(verbose_name=_('Comment Text'))
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='reply', null=True, blank=True,
+                               verbose_name=_('Reply comment'))
+    active = models.BooleanField(default=True, verbose_name=_('Its Active'))
 
-    datetime_create = models.DateTimeField(auto_now_add=True)
+    datetime_create = models.DateTimeField(auto_now_add=True, verbose_name=_('Time created'))
 
     # Manager
     objects = models.Manager()
