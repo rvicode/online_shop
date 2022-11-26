@@ -11,6 +11,18 @@
 <!-- Header -->
 <header class="header">
     {% include 'include/header.html' %}
+<div>
+    {% if messages %}
+        <div class="container">
+        {% for message in messages %}
+            <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+        </div>
+
+    {% endif %}
+</div>
+
+
 </header>
 <!-- Header End -->
 
