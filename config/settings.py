@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Installed package
+    'rosetta',
     'crispy_forms',
     'allauth',
     'allauth.account',
@@ -131,6 +132,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
 LANGUAGE_CODE = 'fa'
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
 
 TIME_ZONE = 'Asia/Tehran'
 
