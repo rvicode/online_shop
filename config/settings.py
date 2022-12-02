@@ -54,11 +54,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
 
-
     # MY APPS
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
+    'cart.apps.CartConfig',
 ]
 
 SITE_ID = 1
