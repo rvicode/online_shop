@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.contrib import messages
 
+from cart.forms import ProductCartForm
 from .models import Product, Comment
 from .forms import CommentForm
 
@@ -20,6 +21,11 @@ class ProductListView(generic.ListView):
     context_object_name = 'products'
     paginate_by = 8
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ProductListView, self).get_context_data()
+        context['add_to_cart_form'] = ProductCartForm()
+        return context
+
 
 class ProductDetailView(generic.DetailView):
     model = Product
@@ -29,6 +35,7 @@ class ProductDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['add_comment_form'] = CommentForm()
+        context['add_to_cart_form'] = ProductCartForm()
         return context
 
 
