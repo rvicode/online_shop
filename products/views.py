@@ -23,7 +23,6 @@ class ProductListView(generic.ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductListView, self).get_context_data()
-        context['add_to_cart_form'] = ProductCartForm()
         return context
 
 
@@ -35,7 +34,6 @@ class ProductDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['add_comment_form'] = CommentForm()
-        context['add_to_cart_form'] = ProductCartForm()
         return context
 
 

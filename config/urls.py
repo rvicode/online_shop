@@ -18,9 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pages.urls')),
+    path('', include('products.urls')),
     path('account/', include('allauth.urls')),
-    path('products/', include('products.urls')),
     path('cart', include('cart.urls')),
 
     # Rosetta (i18n)
