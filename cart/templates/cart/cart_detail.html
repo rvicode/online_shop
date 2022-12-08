@@ -59,10 +59,11 @@
                                                             <span class="product-price-wrapper">
                                                                 <span class="money">{{ item.product_obj.price }} تومان
                                                                 </span>
-                                                            </span>
+                                                            </span>z
                                                 </td>
                                                 <td class="product-quantity">
-                                                    <form action="{% url 'cart:cart_add' item.product_obj.id %}" method="post">
+                                                    <form action="{% url 'cart:cart_add' item.product_obj.id %}"
+                                                          method="post">
                                                         {% csrf_token %}
                                                         <div class="quantity">
                                                             <input type="number" class="quantity-input"
@@ -88,7 +89,10 @@
                         </div>
                         <div class="row no-gutters border-top pt--20 mt--20">
                             <div class="col-sm-6 text-sm-right">
-                                <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
+                                <form action="{% url 'cart:cart_clear' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
+                                </form>
                             </div>
                         </div>
                     </div>
