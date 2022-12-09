@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.contrib import messages
+from django.utils.translation import gettext as _
 
 from cart.forms import ProductCartForm
 from .models import Product, Comment
@@ -16,6 +17,7 @@ def messages_text(request):
 
 
 class ProductListView(generic.ListView):
+    http_method_names = ['get']
     model = Product
     template_name = 'products/product_list.html'
     context_object_name = 'products'
@@ -27,6 +29,7 @@ class ProductListView(generic.ListView):
 
 
 class ProductDetailView(generic.DetailView):
+    http_method_names = ['get']
     model = Product
     template_name = 'products/product_detail.html'
     context_object_name = 'product'
@@ -38,6 +41,7 @@ class ProductDetailView(generic.DetailView):
 
 
 class CommentCreateView(generic.CreateView):
+    http_method_names = ['post']
     model = Comment
     form_class = CommentForm
 
@@ -47,6 +51,5 @@ class CommentCreateView(generic.CreateView):
         product_id = int(self.kwargs['pk'])
         product = get_object_or_404(Product, pk=product_id)
         obj.product = product
+        messages.success(self.request, _('Your comment was successfully!'))
         return super().form_valid(form)
-
-
