@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-08 09:15+0330\n"
+"POT-Creation-Date: 2022-12-09 16:01+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\templates\cart\cart_detail.html:75
+#: .\templates\cart\cart_detail.html:74
 msgid "Update"
 msgstr "بروزرسانی"
+
+#: .\templates\cart\cart_detail.html:123
+msgid "You not have any cart please get back home page and create list"
+msgstr "سبد شما خالی است برای دیدن لیست محصولات به خانه برگردید"
