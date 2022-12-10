@@ -48,19 +48,19 @@
                                             {% for item in cart %}
                                                 <tr>
                                                     <td class="product-remove text-left">
-                                                        <a href="{% url 'cart:cart_remove'  item.product_obj.id %}"><i
+                                                        <a href="{{ item.product_obj.get_absolute_url }}"><i
                                                                 class="flaticon flaticon-cross"></i>
                                                         </a>
                                                     </td>
                                                     <td class="product-remove text-left">
-                                                        <a href="#">
-                                                            <img src="{{ item.product_obj.image.url }}"
-                                                                 alt="products">
+                                                        <a href="{% url 'product:product_detail' item.product_obj.id %}">
+                                                            <img src="{{ item.product_obj.image.url }}" alt="products">
                                                         </a>
                                                     </td>
                                                     <td class="product-name wide-column">
                                                         <h3>
-                                                            <a href="{% url 'product_detail' item.product_obj.id %}">{{ item.product_obj.title }}</a>
+                                                            <a href="{{ item.product_obj.get_absolute_url }}">
+                                                                {{ item.product_obj.title }}</a>
                                                         </h3>
                                                     </td>
                                                     <td class="product-price">

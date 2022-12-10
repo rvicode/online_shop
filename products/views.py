@@ -9,11 +9,11 @@ from .models import Product, Comment
 from .forms import CommentForm
 
 
-def messages_text(request):
-    messages.success(request, 'This is a success message')
-    messages.warning(request, 'This is a success message')
-    messages.error(request, 'This is a success message')
-    return render(request, 'products/massagestemplate.html')
+# def messages_text(request):
+#     messages.success(request, 'This is a success message')
+#     messages.warning(request, 'This is a success message')
+#     messages.error(request, 'This is a success message')
+#     return render(request, 'products/massagestemplate.html')
 
 
 class ProductListView(generic.ListView):
