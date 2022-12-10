@@ -10,6 +10,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name=_('Description'))
     price = models.PositiveIntegerField(verbose_name=_('Product Price'))
     active = models.BooleanField(default=False, verbose_name=_('Its Active'))
+    image = models.ImageField(verbose_name=_('Image'), upload_to='Product/img')
 
     datetime_create = models.DateTimeField(auto_now_add=True, verbose_name=_('Time Created'))
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Time Updated'))
