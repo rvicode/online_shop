@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-09 16:50+0330\n"
+"POT-Creation-Date: 2022-12-10 21:39+0330\n"
 "PO-Revision-Date: 2022-11-26 16:25+0330\n"
 "Last-Translator:   <a@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,75 +18,83 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\models.py:9
+#: .\products\models.py:9
 msgid "Name Product"
 msgstr "اسم محصول"
 
-#: .\models.py:10
+#: .\products\models.py:10
 msgid "Description"
 msgstr "توضیحات محصول"
 
-#: .\models.py:11
+#: .\products\models.py:11
 msgid "Product Price"
 msgstr "قیمت محصول"
 
-#: .\models.py:12 .\models.py:36
+#: .\products\models.py:12 .\products\models.py:37
 msgid "Its Active"
 msgstr "فعال است"
 
-#: .\models.py:14
+#: .\products\models.py:13
+msgid "Image"
+msgstr "تصویر"
+
+#: .\products\models.py:15
 msgid "Time Created"
 msgstr "زمان ساخت"
 
-#: .\models.py:15
+#: .\products\models.py:16
 msgid "Time Updated"
 msgstr "زمان بروزرسانی"
 
-#: .\models.py:31
+#: .\products\models.py:32
 msgid "Author"
 msgstr "کاربر"
 
-#: .\models.py:32
+#: .\products\models.py:33
 msgid "Product"
 msgstr "محصول"
 
-#: .\models.py:33
+#: .\products\models.py:34
 msgid "Comment Text"
 msgstr "متن نظر"
 
-#: .\models.py:35
+#: .\products\models.py:36
 msgid "Reply comment"
 msgstr "جواب نظر"
 
-#: .\models.py:38
+#: .\products\models.py:39
 msgid "Time created"
 msgstr "زمان ساخت"
 
-#: .\templates\products\product_detail.html:53
-#: .\templates\products\product_list.html:73
+#: .\products\templates\products\product_detail.html:53
+#: .\products\templates\products\product_list.html:73
 msgid "Add to Cart"
 msgstr "اًضافه به سبد خرید"
 
-#: .\templates\products\product_detail.html:58
+#: .\products\templates\products\product_detail.html:58
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: .\templates\products\product_detail.html:74
+#: .\products\templates\products\product_detail.html:74
 msgid "Product Description"
 msgstr "توضیحات محصول"
 
-#: .\templates\products\product_detail.html:78
+#: .\products\templates\products\product_detail.html:78
 msgid "Options"
 msgstr "ویژگی ها"
 
-#: .\templates\products\product_detail.html:188
+#: .\products\templates\products\product_detail.html:188
 msgid "Write your comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:195
+#: .\products\templates\products\product_detail.html:195
 msgid "Submit"
 msgstr "ارسال"
 
-#: .\views.py:54
+#: .\products\templates\products\product_list.html:60
+msgid "$"
+msgstr "تومان"
+
+#: .\products\views.py:54
 msgid "Your comment was successfully!"
 msgstr "کامنت شما با موفقیت فرستاده شد"

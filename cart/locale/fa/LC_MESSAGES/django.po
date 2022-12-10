@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-09 16:48+0330\n"
+"POT-Creation-Date: 2022-12-10 21:39+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\cart.py:37
+#: .\cart\cart.py:37
 msgid "Your product added to cart"
 msgstr "محصول شما با موفقیت انتخاب شد"
 
-#: .\cart.py:49
+#: .\cart\cart.py:49
 msgid "Your product removed form cart"
 msgstr "محصول شما با موفقیت پاک شد"
 
-#: .\templates\cart\cart_detail.html:76
+#: .\cart\templates\cart\cart_detail.html:68
+#: .\cart\templates\cart\cart_detail.html:88
+#: .\cart\templates\cart\cart_detail.html:121
+msgid "$"
+msgstr "تومان"
+
+#: .\cart\templates\cart\cart_detail.html:83
 msgid "Update"
 msgstr "بروزرسانی"
 
-#: .\templates\cart\cart_detail.html:100
+#: .\cart\templates\cart\cart_detail.html:107
 msgid "You not have any cart please get back home page and create list"
 msgstr "سبد شما خالی است برای دیدن لیست محصولات به خانه برگردید"
