@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Installed package
+    'jalali_date',
     'rosetta',
     'crispy_forms',
     'allauth',
     'allauth.account',
-    'jalali_date',
 
     # MY APPS
     'accounts.apps.AccountsConfig',
