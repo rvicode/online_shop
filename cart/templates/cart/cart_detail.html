@@ -2,6 +2,8 @@
 
 {% load static %}
 {% load i18n %}
+{% load persian_translation_tags %}
+{% load humanize %}
 
 {% block title %}
     Cart
@@ -65,7 +67,7 @@
                                                     </td>
                                                     <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.product_obj.price }} {% trans '$' %}
+                                                                <span class="money">{{ item.product_obj.price|intcomma:False|translate_fa }} {% trans '$' %}
                                                                 </span>
                                                             </span>
                                                     </td>
@@ -85,7 +87,7 @@
                                                     </td>
                                                     <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.total_price }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.total_price|intcomma:False|translate_fa }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                 </tr>
@@ -118,7 +120,7 @@
                                         </div>
                                         <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">{{ cart.get_total_price }} {% trans '$' %}</span>
+                                                    <span class="money">{{ cart.get_total_price|intcomma:False|translate_fa }} {% trans '$' %}</span>
                                                 </span>
                                         </div>
                                     </div>
