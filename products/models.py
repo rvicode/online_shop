@@ -10,6 +10,7 @@ from django.contrib.auth import get_user_model
 
 class Product(models.Model):
     title = models.CharField(max_length=100, verbose_name=_('Name Product'))
+    short_description = models.TextField(_('Short Description'), blank=True, null=True)
     description = RichTextField(verbose_name=_('Description'))
     price = models.PositiveIntegerField(verbose_name=_('Product Price'))
     active = models.BooleanField(default=False, verbose_name=_('Its Active'))

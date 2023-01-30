@@ -41,7 +41,7 @@
                     <div class="col-12 col-sm-8 product-main-details mt-md--50">
                         <div class="product-summary pl-lg--30 pl-md--0 text-right p-4">
                             <h3 class="product-title mb--20">{{ product.title }}</h3>
-                            <!-- <p>{{ product.description|safe }}</p> -->
+                            <p>{{ product.short_description|truncatewords:30 }}</p>
                             <div class="my-5 py-5 product-price-wrapper mb--25">
                                 <span class="money text-success">{{ product.price|intcomma:False|translate_fa }} {% trans "$" %}</span>
                             </div>
