@@ -34,7 +34,7 @@ class Comment(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, max_length=50, related_name="comments",
                              verbose_name=_('Author'))
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="comments", verbose_name=_('Product'))
-    description = RichTextField(verbose_name=_('Comment Text'))
+    description = models.TextField(verbose_name=_('Comment Text'))
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='reply', null=True, blank=True,
                                verbose_name=_('Reply comment'))
     active = models.BooleanField(default=True, verbose_name=_('Its Active'))
