@@ -3,12 +3,14 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 
+from ckeditor.fields import RichTextField
+
 from django.contrib.auth import get_user_model
 
 
 class Product(models.Model):
     title = models.CharField(max_length=100, verbose_name=_('Name Product'))
-    description = models.TextField(verbose_name=_('Description'))
+    description = RichTextField(verbose_name=_('Description'))
     price = models.PositiveIntegerField(verbose_name=_('Product Price'))
     active = models.BooleanField(default=False, verbose_name=_('Its Active'))
     image = models.ImageField(verbose_name=_('Image'), upload_to='Product/img')
@@ -32,7 +34,7 @@ class Comment(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, max_length=50, related_name="comments",
                              verbose_name=_('Author'))
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="comments", verbose_name=_('Product'))
-    description = models.TextField(verbose_name=_('Comment Text'))
+    description = RichTextField(verbose_name=_('Comment Text'))
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='reply', null=True, blank=True,
                                verbose_name=_('Reply comment'))
     active = models.BooleanField(default=True, verbose_name=_('Its Active'))
