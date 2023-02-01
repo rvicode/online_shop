@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
+from phonenumber_field.modelfields import PhoneNumberField
+
 from products.models import Product
 
 
@@ -11,7 +13,7 @@ class Order(models.Model):
 
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
-    phonenumber = models.CharField(max_length=15)
+    phonenumber = PhoneNumberField()
     message = models.TextField(blank=True, null=True)
     address = models.TextField()
 
