@@ -12,14 +12,14 @@ class Order(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     phonenumber = models.CharField(max_length=15)
-    message = models.TextField()
+    message = models.TextField(blank=True, null=True)
     address = models.TextField()
 
     datetime_create = models.DateTimeField(auto_now_add=True, verbose_name=_('Time Created'))
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Time Updated'))
 
     def __str__(self):
-        return (self.firstname + ' ' + self.lastname + ' ' )
+        return f'Username: {self.username} '
 
 
 class OrderItem(models.Model):
@@ -32,4 +32,4 @@ class OrderItem(models.Model):
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Time Updated'))
 
     def __str__(self):
-        return (self.firstname + ' ' + self.lastname + ' ' )
+        return f'Order {self.order.id}: {self.product} , quantity: {self.quantity}, price: {self.price}'

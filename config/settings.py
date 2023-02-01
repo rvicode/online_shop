@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'ckeditor',
+    'phonenumber_field',
 
     # MY APPS
     'accounts.apps.AccountsConfig',
