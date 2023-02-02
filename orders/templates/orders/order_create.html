@@ -1,7 +1,9 @@
 {% extends "_base.html" %}
 
+
 {% load i18n %}
-{% load crispy_forms_tags %}
+{% load persian_translation_tags %}
+{% load humanize %}
 
 {% block title %}
     Product List
@@ -73,23 +75,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {% for item in cart %}
                                     <tr>
                                         <th>محصول شماره یک
-                                            <strong><span>&#10005;</span>۲</strong>
+                                            <strong><span>&#10005;</span>{{ item.quantity|translate_fa }}</strong>
                                         </th>
-                                        <td class="text-right">۲۹۶,۰۰۰ تومان</td>
+                                        <td class="text-right">{{ item.product_obj.price|intcomma:False|translate_fa }}</td>
                                     </tr>
-                                    <tr>
-                                        <th>محصول شماره دو
-                                            <strong><span>&#10005;</span>۱</strong>
-                                        </th>
-                                        <td class="text-right">۵۸,۰۰۰ تومان</td>
-                                    </tr>
+                                    {% endfor %}
                                 </tbody>
                                 <tfoot>
                                     <tr class="cart-subtotal">
                                         <th>مجموع</th>
-                                        <td class="text-right">۳۴۸,۰۰۰ تومان</td>
+                                        <td class="text-right">{{ cart.get_total_price|intcomma:False|translate_fa }}</td>
                                     </tr>
                                 </tfoot>
                             </table>
