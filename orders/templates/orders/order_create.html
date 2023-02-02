@@ -24,7 +24,8 @@
                         <h2>جزئیات سفارش</h2>
                     </div>
                     <div class="checkout-form">
-                        <form action="#" class="form form--checkout">
+                        <form method="post" action="#" class="form form--checkout">
+                            {% csrf_token %}
                             {{ form|crispy }}
                             <!-- <div class="form-row mb--20">
                                 <div class="form__group col-md-6 mb-sm--30">

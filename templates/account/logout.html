@@ -12,5 +12,5 @@
         <h1>Do you want logout {{ request.user.username }} ?!</h1>
         <span><button type="submit" class="btn btn-danger">Yes</button></span>
     </form>
-    <span><a href="{% url 'home' %}"><button class="btn btn-primary">No</button></a></span>
+    <span><a href="{% url 'product:product_list' %}"><button class="btn btn-primary">No</button></a></span>
 {% endblock %}
