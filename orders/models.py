@@ -8,14 +8,14 @@ from products.models import Product
 
 
 class Order(models.Model):
-    username = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,)
-    is_paid = models.BooleanField(default=False)
+    username = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_('User'))
+    is_paid = models.BooleanField(verbose_name=_('Is Paid?'), default=False)
 
-    firstname = models.CharField(max_length=100)
-    lastname = models.CharField(max_length=100)
-    phonenumber = PhoneNumberField()
-    message = models.TextField(blank=True, null=True)
-    address = models.TextField()
+    firstname = models.CharField(verbose_name=_('First Name'), max_length=100)
+    lastname = models.CharField(verbose_name=_('Last Name'), max_length=100)
+    phonenumber = PhoneNumberField(verbose_name=_('Phone Number'))
+    message = models.TextField(verbose_name=_('Message'), blank=True, null=True)
+    address = models.TextField(verbose_name=_('Address'))
 
     datetime_create = models.DateTimeField(auto_now_add=True, verbose_name=_('Time Created'))
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Time Updated'))
