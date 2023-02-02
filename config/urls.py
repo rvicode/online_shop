@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('products.urls')),
     path('account/', include('allauth.urls')),
-    path('cart', include('cart.urls')),
+    path('cart/', include('cart.urls')),
+    path('order/', include('orders.urls')),
 
     # Rosetta (i18n)
     path('rosetta', include('rosetta.urls')),
