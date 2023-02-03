@@ -22,24 +22,24 @@ def order_create_view(request):
         if form.is_valid():
             order_obj = form.save(commit=False)
             order_obj.username = request.user
-            print(order_obj.username)
             order_obj.save()
 
-        for item in cart:
-            product = item['product_obj']
-            OrderItem.objects.create(
-                order=order_obj,
-                product=product,
-                quantity=item['quantity'],
-                price=product.price,
-            )
+            for item in cart:
+                product = item['product_obj']
+                OrderItem.objects.create(
+                    order=order_obj,
+                    product=product,
+                    quantity=item['quantity'],
+                    price=product.price,
+                )
 
-        cart.clear()
+            cart.clear()
 
-        request.user.first_name = order_obj.firstname
-        request.user.last_name = order_obj.lastname
-        request.user.save()
+            request.user.first_name = order_obj.firstname
+            request.user.last_name = order_obj.lastname
+            request.user.save()
 
-        messages.success(request, _('Your order has successfully placed.'))
+            messages.success(request, _('Your order has successfully placed.'))
+            return redirect('product:product_list')
 
     return render(request, 'orders/order_create.html', {'form': form})
