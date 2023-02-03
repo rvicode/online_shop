@@ -7,7 +7,7 @@
 {% load humanize %}
 
 {% block title %}
-    Product List
+    {% translate 'Product List' %}
 {% endblock %}
 
 {% block body %}
@@ -60,7 +60,6 @@
                                                         </h3>
                                                         <div class="product-price-wrapper mb--30">
                                                             <span class="money text-success">{{ product.price|intcomma:False|translate_fa }} {% trans '$' %}</span>
-                                                            <span class="money-separator">-</span>
                                                         </div>
                                                         <form action="{% url 'cart:cart_add' product.id %}"
                                                               method="post">
