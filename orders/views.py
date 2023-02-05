@@ -39,7 +39,6 @@ def order_create_view(request):
             request.user.last_name = order_obj.lastname
             request.user.save()
 
-            messages.success(request, _('Your order has successfully placed.'))
-            return redirect('product:product_list')
+            request.session['order_id'] = order_obj.id
 
     return render(request, 'orders/order_create.html', {'form': form})
