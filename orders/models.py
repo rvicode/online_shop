@@ -11,6 +11,8 @@ class Order(models.Model):
     username = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_('User'))
     is_paid = models.BooleanField(verbose_name=_('Is Paid?'), default=False)
 
+    zarin_authority = models.CharField(max_length=255, blank=True)
+
     firstname = models.CharField(verbose_name=_('First Name'), max_length=100)
     lastname = models.CharField(verbose_name=_('Last Name'), max_length=100)
     phonenumber = PhoneNumberField(verbose_name=_('Phone Number'))

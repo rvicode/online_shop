@@ -1,7 +1,8 @@
 import requests
 import json
 
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
+from django.http import HttpResponse
 from django.conf import settings
 
 from orders.models import Order
@@ -29,3 +30,12 @@ def payment_process(request):
     }
 
     res = requests.post(url=zarinpal_request_url, data=json.dumps(request_data), headers=request_header)
+    data = res.json()['data']
+    authority = data['authority']
+    order.zarin_authority = authority
+    order.save()
+
+    if 'errors' not in data or len(data['errors'] == 0):
+        return redirect(f'https://www.zarinpal.com/pg/StartPay/{authority}')
+    else:
+        return HttpResponse('Zarinpal Error')
