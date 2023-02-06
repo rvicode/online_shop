@@ -26,7 +26,7 @@ def payment_process(request):
         'merchant_id': settings.ZARINPAL_MERCHANT_ID,
         'amount': rial_total_price,
         'description': f"#{order.id} : {order.firstname} {order.lastname}",
-        'callback_url': '127.0.0.1:8000'
+        'callback_url': 'http://127.0.0.1:8000'
     }
 
     res = requests.post(url=zarinpal_request_url, data=json.dumps(request_data), headers=request_header)
