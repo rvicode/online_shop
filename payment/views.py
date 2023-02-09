@@ -26,7 +26,7 @@ def payment_process(request):
         'merchant_id': settings.ZARINPAL_MERCHANT_ID,
         'amount': rial_total_price,
         'description': f"#{order.id} : {order.firstname} {order.lastname}",
-        'callback_url': reverse('payment:payment_callback')
+        'callback_url': request.build_absolute_uri(reverse('payment:payment_callback')),
     }
 
     res = requests.post(url=zarinpal_request_url, data=json.dumps(request_data), headers=request_header)
@@ -63,7 +63,7 @@ def payment_callback(request):
     res = requests.post(url='https://api.zarinpal.com/pg/v4/payment/verify.json', data=json.dumps(request_data), headers=request_header)
     if 'data' in res.json() and ('errors' not in res.json()['data'] or len(res.json()['errors'] == 0)):
         data = res.json()['data']
-        payment_code = res.json()['code']
+        payment_code = data['code']
 
         if payment_code == 100:
             order.is_paid = True

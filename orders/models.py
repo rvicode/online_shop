@@ -25,7 +25,7 @@ class Order(models.Model):
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Time Updated'))
 
     def __str__(self):
-        return f'Username: {self.username} '
+        return f'Username: {self.username}'
 
     def get_total_price(self):
         return sum(item.quantity * item.price for item in self.items.all())
